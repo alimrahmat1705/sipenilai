@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\RoleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
+
+
+//User
+Route::get('/user',[UserController::class,'index']);
+Route::get('/user-create',[UserController::class,'create']);
+Route::post('/user-create/post',[UserController::class,'store'])->name('user.post');
+Route::get('user-update',[UserController::class,'edit']);
+
+
+//Role
+Route::get('/role',[RoleController::class,'index']);
+Route::post('/role-create/post',[RoleController::class,'store'])->name('role.post');
+Route::put('/role-update/{id}',[RoleController::class,'update'])->name('role.update');

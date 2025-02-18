@@ -1,0 +1,16 @@
+@import "tailwindcss";
+@source "../views";
+
+@font-face {
+    font-family: 'inter';
+    src: url('/fonts/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+.active-link {
+    @apply text-blue-600 font-bold transform -translate-y-1 transition-all duration-200;
+}
+
